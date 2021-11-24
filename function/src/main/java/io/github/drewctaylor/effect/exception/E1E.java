@@ -15,6 +15,7 @@ public interface E1E<P1, E extends Exception>
      * Executes this effect.
      * 
      * @param  p1 the value of parameter 1
+     * 
      * @throws E  the exception
      */
     void f(
@@ -27,7 +28,9 @@ public interface E1E<P1, E extends Exception>
      * @param  e1e                  the given effect
      * @param  <P1>                 the type of parameter 1
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e1e is null
      */
     static <P1, E extends Exception> E1E<P1, E> e1e(
@@ -42,6 +45,7 @@ public interface E1E<P1, E extends Exception>
      * 
      * @param  <P1> the type of parameter 1
      * @param  <E>  the type of the exception
+     * 
      * @return      an effect that does nothing
      */
     static <P1, E extends Exception> E1E<P1, E> nop()
@@ -56,6 +60,7 @@ public interface E1E<P1, E extends Exception>
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E0E<E> a(
@@ -65,12 +70,14 @@ public interface E1E<P1, E extends Exception>
     }
 
     /**
-     * Returns an effect that throws the given exception
+     * Returns an effect that throws the given exception.
      * 
      * @param  e                    the given exception
      * @param  <P1>                 the type of parameter 1
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an effect that throws the given exception
+     * 
      * @throws NullPointerException if e is null
      */
     static <P1, E extends Exception> E1E<P1, E> e(

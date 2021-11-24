@@ -41,7 +41,9 @@ public interface E5<P1, P2, P3, P4, P5>
      * @param  <P3>                 the type of parameter 3
      * @param  <P4>                 the type of parameter 4
      * @param  <P5>                 the type of parameter 5
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e5 is null
      */
     static <P1, P2, P3, P4, P5> E5<P1, P2, P3, P4, P5> e5(
@@ -59,6 +61,7 @@ public interface E5<P1, P2, P3, P4, P5>
      * @param  <P3> the type of parameter 3
      * @param  <P4> the type of parameter 4
      * @param  <P5> the type of parameter 5
+     * 
      * @return      an effect that does nothing
      */
     static <P1, P2, P3, P4, P5> E5<P1, P2, P3, P4, P5> nop()
@@ -77,6 +80,7 @@ public interface E5<P1, P2, P3, P4, P5>
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E4<P2, P3, P4, P5> a(
@@ -123,7 +127,9 @@ public interface E5<P1, P2, P3, P4, P5>
      * @param  <P3>                 the type of parameter 3
      * @param  <P4>                 the type of parameter 4
      * @param  <P5>                 the type of parameter 5
+     * 
      * @return                      an uncurried form of the given effect
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5> E5<P1, P2, P3, P4, P5> uncurry(

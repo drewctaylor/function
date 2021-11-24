@@ -41,6 +41,7 @@ public interface F14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  p12 the value of parameter 12
      * @param  p13 the value of parameter 13
      * @param  p14 the value of parameter 14
+     * 
      * @return     the output value of this function
      */
     R1 f(
@@ -78,7 +79,9 @@ public interface F14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P13>                the type of parameter 13
      * @param  <P14>                the type of parameter 14
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      a form of the given function that is of this function type
+     * 
      * @throws NullPointerException if f14 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, R1> F14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, R1> f14(
@@ -105,6 +108,7 @@ public interface F14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P12> the type of parameter 12
      * @param  <P13> the type of parameter 13
      * @param  <P14> the type of parameter 14
+     * 
      * @return       a function that returns its first parameter value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14> F14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P1> c()
@@ -130,6 +134,7 @@ public interface F14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * Returns a form of this function with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this function with the value of parameter 1 fixed to the given value
      */
     default F13<P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, R1> a(
@@ -204,7 +209,9 @@ public interface F14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P13>                the type of parameter 13
      * @param  <P14>                the type of parameter 14
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      an uncurried form of the given function
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, R1> F14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, R1> uncurry(
@@ -233,7 +240,9 @@ public interface F14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * 
      * @param  f1                   the given function
      * @param  <R2>                 the type of the output value
+     * 
      * @return                      a function that is the given function composed with this function
+     * 
      * @throws NullPointerException if f1 is null
      */
     default <R2> F14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, R2> then(
@@ -276,6 +285,7 @@ public interface F14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P13> the type of parameter 13
      * @param  <P14> the type of parameter 14
      * @param  <R1>  the type of the output value
+     * 
      * @return       a function that returns the given value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, R1> F14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, R1> c(

@@ -25,7 +25,9 @@ public interface E1<P1> extends Consumer<P1>
      * 
      * @param  e1                   the given effect
      * @param  <P1>                 the type of parameter 1
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e1 is null
      */
     static <P1> E1<P1> e1(
@@ -39,6 +41,7 @@ public interface E1<P1> extends Consumer<P1>
      * Returns an effect that does nothing.
      * 
      * @param  <P1> the type of parameter 1
+     * 
      * @return      an effect that does nothing
      */
     static <P1> E1<P1> nop()
@@ -53,6 +56,7 @@ public interface E1<P1> extends Consumer<P1>
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E0 a(

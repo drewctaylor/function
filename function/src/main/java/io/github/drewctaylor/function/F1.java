@@ -17,6 +17,7 @@ public interface F1<P1, R1> extends Function<P1, R1>
      * Returns the output value of this function.
      * 
      * @param  p1 the value of parameter 1
+     * 
      * @return    the output value of this function
      */
     R1 f(
@@ -28,7 +29,9 @@ public interface F1<P1, R1> extends Function<P1, R1>
      * @param  f1                   the given function
      * @param  <P1>                 the type of parameter 1
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      a form of the given function that is of this function type
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, R1> F1<P1, R1> f1(
@@ -42,6 +45,7 @@ public interface F1<P1, R1> extends Function<P1, R1>
      * Returns a function that returns its first parameter value as its output value.
      * 
      * @param  <P1> the type of parameter 1
+     * 
      * @return      a function that returns its first parameter value as its output value
      */
     static <P1> F1<P1, P1> c()
@@ -54,6 +58,7 @@ public interface F1<P1, R1> extends Function<P1, R1>
      * Returns a function that returns its first parameter value as its output value.
      * 
      * @param  <P1> the type of parameter 1
+     * 
      * @return      a function that returns its first parameter value as its output value
      */
     static <P1> F1<P1, P1> identity()
@@ -66,6 +71,7 @@ public interface F1<P1, R1> extends Function<P1, R1>
      * Returns a form of this function with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this function with the value of parameter 1 fixed to the given value
      */
     default F0<R1> a(
@@ -79,7 +85,9 @@ public interface F1<P1, R1> extends Function<P1, R1>
      * 
      * @param  f1                   the given function
      * @param  <R2>                 the type of the output value
+     * 
      * @return                      a function that is the given function composed with this function
+     * 
      * @throws NullPointerException if f1 is null
      */
     default <R2> F1<P1, R2> then(
@@ -96,6 +104,7 @@ public interface F1<P1, R1> extends Function<P1, R1>
      * @param  r1   the given value
      * @param  <P1> the type of parameter 1
      * @param  <R1> the type of the output value
+     * 
      * @return      a function that returns the given value as its output value
      */
     static <P1, R1> F1<P1, R1> c(
@@ -111,6 +120,7 @@ public interface F1<P1, R1> extends Function<P1, R1>
      * @param  r1   the given value
      * @param  <P1> the type of parameter 1
      * @param  <R1> the type of the output value
+     * 
      * @return      a function that returns the given value as its output value
      */
     static <P1, R1> F1<P1, R1> constant(

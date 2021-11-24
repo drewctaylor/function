@@ -53,7 +53,9 @@ public interface E8<P1, P2, P3, P4, P5, P6, P7, P8>
      * @param  <P6>                 the type of parameter 6
      * @param  <P7>                 the type of parameter 7
      * @param  <P8>                 the type of parameter 8
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e8 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8> E8<P1, P2, P3, P4, P5, P6, P7, P8> e8(
@@ -74,6 +76,7 @@ public interface E8<P1, P2, P3, P4, P5, P6, P7, P8>
      * @param  <P6> the type of parameter 6
      * @param  <P7> the type of parameter 7
      * @param  <P8> the type of parameter 8
+     * 
      * @return      an effect that does nothing
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8> E8<P1, P2, P3, P4, P5, P6, P7, P8> nop()
@@ -95,6 +98,7 @@ public interface E8<P1, P2, P3, P4, P5, P6, P7, P8>
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E7<P2, P3, P4, P5, P6, P7, P8> a(
@@ -150,7 +154,9 @@ public interface E8<P1, P2, P3, P4, P5, P6, P7, P8>
      * @param  <P6>                 the type of parameter 6
      * @param  <P7>                 the type of parameter 7
      * @param  <P8>                 the type of parameter 8
+     * 
      * @return                      an uncurried form of the given effect
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8> E8<P1, P2, P3, P4, P5, P6, P7, P8> uncurry(

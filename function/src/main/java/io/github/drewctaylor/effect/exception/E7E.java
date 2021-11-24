@@ -29,6 +29,7 @@ public interface E7E<P1, P2, P3, P4, P5, P6, P7, E extends Exception>
      * @param  p5 the value of parameter 5
      * @param  p6 the value of parameter 6
      * @param  p7 the value of parameter 7
+     * 
      * @throws E  the exception
      */
     void f(
@@ -53,7 +54,9 @@ public interface E7E<P1, P2, P3, P4, P5, P6, P7, E extends Exception>
      * @param  <P6>                 the type of parameter 6
      * @param  <P7>                 the type of parameter 7
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e7e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, E extends Exception> E7E<P1, P2, P3, P4, P5, P6, P7, E> e7e(
@@ -74,6 +77,7 @@ public interface E7E<P1, P2, P3, P4, P5, P6, P7, E extends Exception>
      * @param  <P6> the type of parameter 6
      * @param  <P7> the type of parameter 7
      * @param  <E>  the type of the exception
+     * 
      * @return      an effect that does nothing
      */
     static <P1, P2, P3, P4, P5, P6, P7, E extends Exception> E7E<P1, P2, P3, P4, P5, P6, P7, E> nop()
@@ -94,6 +98,7 @@ public interface E7E<P1, P2, P3, P4, P5, P6, P7, E extends Exception>
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E6E<P2, P3, P4, P5, P6, P7, E> a(
@@ -147,7 +152,9 @@ public interface E7E<P1, P2, P3, P4, P5, P6, P7, E extends Exception>
      * @param  <P6>                 the type of parameter 6
      * @param  <P7>                 the type of parameter 7
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an uncurried form of the given effect
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, E extends Exception> E7E<P1, P2, P3, P4, P5, P6, P7, E> uncurry(
@@ -165,7 +172,7 @@ public interface E7E<P1, P2, P3, P4, P5, P6, P7, E extends Exception>
     }
 
     /**
-     * Returns an effect that throws the given exception
+     * Returns an effect that throws the given exception.
      * 
      * @param  e                    the given exception
      * @param  <P1>                 the type of parameter 1
@@ -176,7 +183,9 @@ public interface E7E<P1, P2, P3, P4, P5, P6, P7, E extends Exception>
      * @param  <P6>                 the type of parameter 6
      * @param  <P7>                 the type of parameter 7
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an effect that throws the given exception
+     * 
      * @throws NullPointerException if e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, E extends Exception> E7E<P1, P2, P3, P4, P5, P6, P7, E> e(

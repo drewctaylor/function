@@ -57,6 +57,7 @@ public interface F22<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  p20 the value of parameter 20
      * @param  p21 the value of parameter 21
      * @param  p22 the value of parameter 22
+     * 
      * @return     the output value of this function
      */
     R1 f(
@@ -110,7 +111,9 @@ public interface F22<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P21>                the type of parameter 21
      * @param  <P22>                the type of parameter 22
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      a form of the given function that is of this function type
+     * 
      * @throws NullPointerException if f22 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, R1> F22<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, R1> f22(
@@ -145,6 +148,7 @@ public interface F22<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P20> the type of parameter 20
      * @param  <P21> the type of parameter 21
      * @param  <P22> the type of parameter 22
+     * 
      * @return       a function that returns its first parameter value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22> F22<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P1> c()
@@ -178,6 +182,7 @@ public interface F22<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * Returns a form of this function with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this function with the value of parameter 1 fixed to the given value
      */
     default F21<P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, R1> a(
@@ -276,7 +281,9 @@ public interface F22<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P21>                the type of parameter 21
      * @param  <P22>                the type of parameter 22
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      an uncurried form of the given function
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, R1> F22<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, R1> uncurry(
@@ -313,7 +320,9 @@ public interface F22<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * 
      * @param  f1                   the given function
      * @param  <R2>                 the type of the output value
+     * 
      * @return                      a function that is the given function composed with this function
+     * 
      * @throws NullPointerException if f1 is null
      */
     default <R2> F22<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, R2> then(
@@ -372,6 +381,7 @@ public interface F22<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P21> the type of parameter 21
      * @param  <P22> the type of parameter 22
      * @param  <R1>  the type of the output value
+     * 
      * @return       a function that returns the given value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, R1> F22<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, R1> c(

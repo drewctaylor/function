@@ -31,6 +31,7 @@ public interface E8E<P1, P2, P3, P4, P5, P6, P7, P8, E extends Exception>
      * @param  p6 the value of parameter 6
      * @param  p7 the value of parameter 7
      * @param  p8 the value of parameter 8
+     * 
      * @throws E  the exception
      */
     void f(
@@ -57,7 +58,9 @@ public interface E8E<P1, P2, P3, P4, P5, P6, P7, P8, E extends Exception>
      * @param  <P7>                 the type of parameter 7
      * @param  <P8>                 the type of parameter 8
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e8e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, E extends Exception> E8E<P1, P2, P3, P4, P5, P6, P7, P8, E> e8e(
@@ -79,6 +82,7 @@ public interface E8E<P1, P2, P3, P4, P5, P6, P7, P8, E extends Exception>
      * @param  <P7> the type of parameter 7
      * @param  <P8> the type of parameter 8
      * @param  <E>  the type of the exception
+     * 
      * @return      an effect that does nothing
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, E extends Exception> E8E<P1, P2, P3, P4, P5, P6, P7, P8, E> nop()
@@ -100,6 +104,7 @@ public interface E8E<P1, P2, P3, P4, P5, P6, P7, P8, E extends Exception>
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E7E<P2, P3, P4, P5, P6, P7, P8, E> a(
@@ -156,7 +161,9 @@ public interface E8E<P1, P2, P3, P4, P5, P6, P7, P8, E extends Exception>
      * @param  <P7>                 the type of parameter 7
      * @param  <P8>                 the type of parameter 8
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an uncurried form of the given effect
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, E extends Exception> E8E<P1, P2, P3, P4, P5, P6, P7, P8, E> uncurry(
@@ -175,7 +182,7 @@ public interface E8E<P1, P2, P3, P4, P5, P6, P7, P8, E extends Exception>
     }
 
     /**
-     * Returns an effect that throws the given exception
+     * Returns an effect that throws the given exception.
      * 
      * @param  e                    the given exception
      * @param  <P1>                 the type of parameter 1
@@ -187,7 +194,9 @@ public interface E8E<P1, P2, P3, P4, P5, P6, P7, P8, E extends Exception>
      * @param  <P7>                 the type of parameter 7
      * @param  <P8>                 the type of parameter 8
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an effect that throws the given exception
+     * 
      * @throws NullPointerException if e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, E extends Exception> E8E<P1, P2, P3, P4, P5, P6, P7, P8, E> e(

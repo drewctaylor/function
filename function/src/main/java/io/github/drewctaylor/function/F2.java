@@ -19,6 +19,7 @@ public interface F2<P1, P2, R1> extends BiFunction<P1, P2, R1>
      * 
      * @param  p1 the value of parameter 1
      * @param  p2 the value of parameter 2
+     * 
      * @return    the output value of this function
      */
     R1 f(
@@ -32,7 +33,9 @@ public interface F2<P1, P2, R1> extends BiFunction<P1, P2, R1>
      * @param  <P1>                 the type of parameter 1
      * @param  <P2>                 the type of parameter 2
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      a form of the given function that is of this function type
+     * 
      * @throws NullPointerException if f2 is null
      */
     static <P1, P2, R1> F2<P1, P2, R1> f2(
@@ -47,6 +50,7 @@ public interface F2<P1, P2, R1> extends BiFunction<P1, P2, R1>
      * 
      * @param  <P1> the type of parameter 1
      * @param  <P2> the type of parameter 2
+     * 
      * @return      a function that returns its first parameter value as its output value
      */
     static <P1, P2> F2<P1, P2, P1> c()
@@ -60,6 +64,7 @@ public interface F2<P1, P2, R1> extends BiFunction<P1, P2, R1>
      * Returns a form of this function with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this function with the value of parameter 1 fixed to the given value
      */
     default F1<P2, R1> a(
@@ -98,7 +103,9 @@ public interface F2<P1, P2, R1> extends BiFunction<P1, P2, R1>
      * @param  <P1>                 the type of parameter 1
      * @param  <P2>                 the type of parameter 2
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      an uncurried form of the given function
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, R1> F2<P1, P2, R1> uncurry(
@@ -115,7 +122,9 @@ public interface F2<P1, P2, R1> extends BiFunction<P1, P2, R1>
      * 
      * @param  f1                   the given function
      * @param  <R2>                 the type of the output value
+     * 
      * @return                      a function that is the given function composed with this function
+     * 
      * @throws NullPointerException if f1 is null
      */
     default <R2> F2<P1, P2, R2> then(
@@ -134,6 +143,7 @@ public interface F2<P1, P2, R1> extends BiFunction<P1, P2, R1>
      * @param  <P1> the type of parameter 1
      * @param  <P2> the type of parameter 2
      * @param  <R1> the type of the output value
+     * 
      * @return      a function that returns the given value as its output value
      */
     static <P1, P2, R1> F2<P1, P2, R1> c(

@@ -39,6 +39,7 @@ public interface E12E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E exten
      * @param  p10 the value of parameter 10
      * @param  p11 the value of parameter 11
      * @param  p12 the value of parameter 12
+     * 
      * @throws E   the exception
      */
     void f(
@@ -73,7 +74,9 @@ public interface E12E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E exten
      * @param  <P11>                the type of parameter 11
      * @param  <P12>                the type of parameter 12
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e12e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E extends Exception> E12E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E> e12e(
@@ -99,6 +102,7 @@ public interface E12E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E exten
      * @param  <P11> the type of parameter 11
      * @param  <P12> the type of parameter 12
      * @param  <E>   the type of the exception
+     * 
      * @return       an effect that does nothing
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E extends Exception> E12E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E> nop()
@@ -124,6 +128,7 @@ public interface E12E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E exten
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E11E<P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E> a(
@@ -192,7 +197,9 @@ public interface E12E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E exten
      * @param  <P11>                the type of parameter 11
      * @param  <P12>                the type of parameter 12
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an uncurried form of the given effect
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E extends Exception> E12E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E> uncurry(
@@ -215,7 +222,7 @@ public interface E12E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E exten
     }
 
     /**
-     * Returns an effect that throws the given exception
+     * Returns an effect that throws the given exception.
      * 
      * @param  e                    the given exception
      * @param  <P1>                 the type of parameter 1
@@ -231,7 +238,9 @@ public interface E12E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E exten
      * @param  <P11>                the type of parameter 11
      * @param  <P12>                the type of parameter 12
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an effect that throws the given exception
+     * 
      * @throws NullPointerException if e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E extends Exception> E12E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, E> e(

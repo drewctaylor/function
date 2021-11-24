@@ -80,7 +80,9 @@ public interface F32E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  p30 the value of parameter 30
      * @param  p31 the value of parameter 31
      * @param  p32 the value of parameter 32
+     * 
      * @return     the output value of this function
+     * 
      * @throws E   the exception
      */
     R1 f(
@@ -156,7 +158,9 @@ public interface F32E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P32>                the type of parameter 32
      * @param  <R1>                 the type of the output value
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a form of the given function that is of this function type
+     * 
      * @throws NullPointerException if f32e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1, E extends Exception> F32E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1, E> f32e(
@@ -202,6 +206,7 @@ public interface F32E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P31> the type of parameter 31
      * @param  <P32> the type of parameter 32
      * @param  <E>   the type of the exception
+     * 
      * @return       a function that returns its first parameter value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, E extends Exception> F32E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, P1, E> c()
@@ -245,6 +250,7 @@ public interface F32E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * Returns a form of this function with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this function with the value of parameter 1 fixed to the given value
      */
     default F31E<P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1, E> a(
@@ -374,7 +380,9 @@ public interface F32E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P32>                the type of parameter 32
      * @param  <R1>                 the type of the output value
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an uncurried form of the given function
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1, E extends Exception> F32E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1, E> uncurry(
@@ -421,7 +429,9 @@ public interface F32E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * 
      * @param  f1                   the given function
      * @param  <R2>                 the type of the output value
+     * 
      * @return                      a function that is the given function composed with this function
+     * 
      * @throws NullPointerException if f1 is null
      */
     default <R2> F32E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R2, E> then(
@@ -501,6 +511,7 @@ public interface F32E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P32> the type of parameter 32
      * @param  <R1>  the type of the output value
      * @param  <E>   the type of the exception
+     * 
      * @return       a function that returns the given value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1, E extends Exception> F32E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1, E> c(
@@ -542,7 +553,7 @@ public interface F32E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
     }
 
     /**
-     * Returns a function that throws the given exception
+     * Returns a function that throws the given exception.
      * 
      * @param  e                    the given exception
      * @param  <P1>                 the type of parameter 1
@@ -579,7 +590,9 @@ public interface F32E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P32>                the type of parameter 32
      * @param  <R1>                 the type of the output value
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a function that throws the given exception
+     * 
      * @throws NullPointerException if e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1, E extends Exception> F32E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1, E> e(

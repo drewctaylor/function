@@ -17,6 +17,7 @@ public interface F0E<R1, E extends Exception>
      * Returns the output value of this function.
      * 
      * @return   the output value of this function
+     * 
      * @throws E the exception
      */
     R1 f()
@@ -28,7 +29,9 @@ public interface F0E<R1, E extends Exception>
      * @param  f0e                  the given function
      * @param  <R1>                 the type of the output value
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a form of the given function that is of this function type
+     * 
      * @throws NullPointerException if f0e is null
      */
     static <R1, E extends Exception> F0E<R1, E> f0e(
@@ -43,7 +46,9 @@ public interface F0E<R1, E extends Exception>
      * 
      * @param  f1                   the given function
      * @param  <R2>                 the type of the output value
+     * 
      * @return                      a function that is the given function composed with this function
+     * 
      * @throws NullPointerException if f1 is null
      */
     default <R2> F0E<R2, E> then(
@@ -59,6 +64,7 @@ public interface F0E<R1, E extends Exception>
      * @param  r1   the given value
      * @param  <R1> the type of the output value
      * @param  <E>  the type of the exception
+     * 
      * @return      a function that returns the given value as its output value
      */
     static <R1, E extends Exception> F0E<R1, E> c(
@@ -68,12 +74,14 @@ public interface F0E<R1, E extends Exception>
     }
 
     /**
-     * Returns a function that throws the given exception
+     * Returns a function that throws the given exception.
      * 
      * @param  e                    the given exception
      * @param  <R1>                 the type of the output value
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a function that throws the given exception
+     * 
      * @throws NullPointerException if e is null
      */
     static <R1, E extends Exception> F0E<R1, E> e(

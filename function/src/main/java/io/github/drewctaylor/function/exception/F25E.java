@@ -66,7 +66,9 @@ public interface F25E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  p23 the value of parameter 23
      * @param  p24 the value of parameter 24
      * @param  p25 the value of parameter 25
+     * 
      * @return     the output value of this function
+     * 
      * @throws E   the exception
      */
     R1 f(
@@ -128,7 +130,9 @@ public interface F25E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P25>                the type of parameter 25
      * @param  <R1>                 the type of the output value
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a form of the given function that is of this function type
+     * 
      * @throws NullPointerException if f25e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, R1, E extends Exception> F25E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, R1, E> f25e(
@@ -167,6 +171,7 @@ public interface F25E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P24> the type of parameter 24
      * @param  <P25> the type of parameter 25
      * @param  <E>   the type of the exception
+     * 
      * @return       a function that returns its first parameter value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, E extends Exception> F25E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P1, E> c()
@@ -203,6 +208,7 @@ public interface F25E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * Returns a form of this function with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this function with the value of parameter 1 fixed to the given value
      */
     default F24E<P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, R1, E> a(
@@ -311,7 +317,9 @@ public interface F25E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P25>                the type of parameter 25
      * @param  <R1>                 the type of the output value
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an uncurried form of the given function
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, R1, E extends Exception> F25E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, R1, E> uncurry(
@@ -351,7 +359,9 @@ public interface F25E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * 
      * @param  f1                   the given function
      * @param  <R2>                 the type of the output value
+     * 
      * @return                      a function that is the given function composed with this function
+     * 
      * @throws NullPointerException if f1 is null
      */
     default <R2> F25E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, R2, E> then(
@@ -417,6 +427,7 @@ public interface F25E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P25> the type of parameter 25
      * @param  <R1>  the type of the output value
      * @param  <E>   the type of the exception
+     * 
      * @return       a function that returns the given value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, R1, E extends Exception> F25E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, R1, E> c(
@@ -451,7 +462,7 @@ public interface F25E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
     }
 
     /**
-     * Returns a function that throws the given exception
+     * Returns a function that throws the given exception.
      * 
      * @param  e                    the given exception
      * @param  <P1>                 the type of parameter 1
@@ -481,7 +492,9 @@ public interface F25E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P25>                the type of parameter 25
      * @param  <R1>                 the type of the output value
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a function that throws the given exception
+     * 
      * @throws NullPointerException if e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, R1, E extends Exception> F25E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, R1, E> e(

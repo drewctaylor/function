@@ -1,4 +1,3 @@
-[![Workflow Maven Package](https://github.com/drewctaylor/function/workflows/workflow-maven-package/badge.svg)](https://github.com/drewctaylor/function/workflows/workflow-maven-package/badge.svg)
 [![Workflow Maven Deploy](https://github.com/drewctaylor/function/workflows/workflow-maven-deploy/badge.svg)](https://github.com/drewctaylor/function/workflows/workflow-maven-deploy/badge.svg)
 [![Code Coverage](https://codecov.io/gh/drewctaylor/function/branch/trunk/graph/badge.svg)](https://codecov.io/gh/drewctaylor/function)
 
@@ -116,7 +115,7 @@ This library provides functions and effects, from 0- to 32-parameters, which sup
         <dependency>
             <groupId>io.github.drewctaylor</groupId>
             <artifactId>function</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
     ```

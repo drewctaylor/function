@@ -5,32 +5,24 @@
     <parent>
         <groupId>io.github.drewctaylor</groupId>
         <artifactId>maven</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>function</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/drewctaylor/function</url>
-        </repository>
-    </distributionManagement>
 
     <dependencies>
         <dependency>
             <groupId>io.github.drewctaylor</groupId>
             <artifactId>require</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.6.2</version>
+            <version>5.8.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -40,12 +32,15 @@
             <plugin>
                 <groupId>io.github.drewctaylor</groupId>
                 <artifactId>javapoet-maven-plugin</artifactId>
+                <version>1.0.5-SNAPSHOT</version>
                 <configuration>
                     <methods>
-                        <io.github.drewctaylor.function.javapoet.EffectFactory.iterable>32</io.github.drewctaylor.function.javapoet.EffectFactory.iterable>
-                        <io.github.drewctaylor.function.javapoet.EffectThrowsExceptionFactory.iterable>32</io.github.drewctaylor.function.javapoet.EffectThrowsExceptionFactory.iterable>
+                        <io.github.drewctaylor.effect.javapoet.EffectFactory.iterable>32</io.github.drewctaylor.effect.javapoet.EffectFactory.iterable>
+                        <io.github.drewctaylor.effect.exception.javapoet.EffectThrowsExceptionFactory.iterable>32</io.github.drewctaylor.effect.exception.javapoet.EffectThrowsExceptionFactory.iterable>
                         <io.github.drewctaylor.function.javapoet.FunctionFactory.iterable>32</io.github.drewctaylor.function.javapoet.FunctionFactory.iterable>
-                        <io.github.drewctaylor.function.javapoet.FunctionThrowsExceptionFactory.iterable>32</io.github.drewctaylor.function.javapoet.FunctionThrowsExceptionFactory.iterable>
+                        <io.github.drewctaylor.function.exception.javapoet.FunctionThrowsExceptionFactory.iterable>32</io.github.drewctaylor.function.exception.javapoet.FunctionThrowsExceptionFactory.iterable>
+                        <io.github.drewctaylor.product.javapoet.ProductFactory.iterable>32</io.github.drewctaylor.product.javapoet.ProductFactory.iterable>
+                        <io.github.drewctaylor.sum.javapoet.SumFactory.iterable>32</io.github.drewctaylor.sum.javapoet.SumFactory.iterable>
                     </methods>
                     <path>${project.basedir}/src/main/java</path>
                 </configuration>
@@ -53,7 +48,7 @@
                     <dependency>
                         <groupId>io.github.drewctaylor</groupId>
                         <artifactId>function-javapoet</artifactId>
-                        <version>1.0.0-SNAPSHOT</version>
+                        <version>0.0.1-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
                 <executions>

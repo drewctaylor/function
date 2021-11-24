@@ -61,7 +61,9 @@ public interface E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10>
      * @param  <P8>                 the type of parameter 8
      * @param  <P9>                 the type of parameter 9
      * @param  <P10>                the type of parameter 10
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e10 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> e10(
@@ -84,6 +86,7 @@ public interface E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10>
      * @param  <P8>  the type of parameter 8
      * @param  <P9>  the type of parameter 9
      * @param  <P10> the type of parameter 10
+     * 
      * @return       an effect that does nothing
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> nop()
@@ -107,6 +110,7 @@ public interface E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10>
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E9<P2, P3, P4, P5, P6, P7, P8, P9, P10> a(
@@ -168,7 +172,9 @@ public interface E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10>
      * @param  <P8>                 the type of parameter 8
      * @param  <P9>                 the type of parameter 9
      * @param  <P10>                the type of parameter 10
+     * 
      * @return                      an uncurried form of the given effect
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> uncurry(

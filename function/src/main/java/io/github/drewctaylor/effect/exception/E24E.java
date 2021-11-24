@@ -63,6 +63,7 @@ public interface E24E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  p22 the value of parameter 22
      * @param  p23 the value of parameter 23
      * @param  p24 the value of parameter 24
+     * 
      * @throws E   the exception
      */
     void f(
@@ -121,7 +122,9 @@ public interface E24E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P23>                the type of parameter 23
      * @param  <P24>                the type of parameter 24
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e24e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, E extends Exception> E24E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, E> e24e(
@@ -159,6 +162,7 @@ public interface E24E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P23> the type of parameter 23
      * @param  <P24> the type of parameter 24
      * @param  <E>   the type of the exception
+     * 
      * @return       an effect that does nothing
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, E extends Exception> E24E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, E> nop()
@@ -196,6 +200,7 @@ public interface E24E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E23E<P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, E> a(
@@ -300,7 +305,9 @@ public interface E24E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P23>                the type of parameter 23
      * @param  <P24>                the type of parameter 24
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an uncurried form of the given effect
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, E extends Exception> E24E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, E> uncurry(
@@ -335,7 +342,7 @@ public interface E24E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
     }
 
     /**
-     * Returns an effect that throws the given exception
+     * Returns an effect that throws the given exception.
      * 
      * @param  e                    the given exception
      * @param  <P1>                 the type of parameter 1
@@ -363,7 +370,9 @@ public interface E24E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P23>                the type of parameter 23
      * @param  <P24>                the type of parameter 24
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an effect that throws the given exception
+     * 
      * @throws NullPointerException if e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, E extends Exception> E24E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, E> e(

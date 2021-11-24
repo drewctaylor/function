@@ -1,6 +1,8 @@
-package io.github.drewctaylor.function.javapoet;
+package io.github.drewctaylor.javapoet;
 
 import com.squareup.javapoet.ClassName;
+import com.squareup.javapoet.CodeBlock;
+import com.squareup.javapoet.FieldSpec;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.ParameterSpec;
@@ -12,46 +14,38 @@ import com.squareup.javapoet.TypeVariableName;
 import io.github.drewctaylor.require.Require;
 
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import static io.github.drewctaylor.javapoet.JavadocSpec.Builder.returnJavadoc;
 import static io.github.drewctaylor.require.Require.requireNonNull;
 import static io.github.drewctaylor.require.RequireBound.requireGreaterThanOrEqual;
-import static io.github.drewctaylor.require.RequireNumberInteger.requireInteger;
 import static io.github.drewctaylor.require.RequireNumberInteger.requirePositive;
 import static io.github.drewctaylor.require.RequireNumberInteger.requireZeroOrPositive;
 import static java.lang.String.format;
 import static java.lang.System.lineSeparator;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
+import static java.util.stream.IntStream.range;
 import static java.util.stream.Stream.concat;
 import static java.util.stream.Stream.empty;
 import static java.util.stream.Stream.of;
 import static javax.lang.model.element.Modifier.ABSTRACT;
 import static javax.lang.model.element.Modifier.DEFAULT;
 import static javax.lang.model.element.Modifier.FINAL;
+import static javax.lang.model.element.Modifier.PRIVATE;
 import static javax.lang.model.element.Modifier.PUBLIC;
 import static javax.lang.model.element.Modifier.STATIC;
 
-final class JavaPoetUtility
+public final class JavaPoetUtility
 {
     private JavaPoetUtility()
     {
-    }
-
-    static Iterable<JavaFile> file(
-            final String parameterCountString,
-            final boolean exception,
-            final boolean effect)
-    {
-        final var parameterCount = requireZeroOrPositive(requireInteger(parameterCountString, "parameterCountString"), "parameterCountString");
-
-        return IntStream.range(0, parameterCount + 1)
-                .mapToObj(parameterCountInner -> file(parameterCountInner, exception, effect))
-                .collect(toList());
     }
 
     /**
@@ -60,9 +54,10 @@ final class JavaPoetUtility
      * @param  parameterCount the given parameter count
      * @param  exception      the given exception
      * @param  effect         the given effect
+     * 
      * @return                the "FN" java file
      */
-    private static JavaFile file(
+    public static JavaFile file(
             final int parameterCount,
             final boolean exception,
             final boolean effect)
@@ -204,6 +199,7 @@ final class JavaPoetUtility
      * @param  parameterCount the given parameter count
      * @param  exception      the given exception
      * @param  effect         the given effect
+     * 
      * @return                the "f" method spec
      */
     private static MethodSpec f(
@@ -240,6 +236,7 @@ final class JavaPoetUtility
      *
      * @param  parameterCount the given parameter count
      * @param  exception      the given exception
+     * 
      * @return                the "the" method spec
      */
     private static MethodSpec then(
@@ -278,6 +275,7 @@ final class JavaPoetUtility
      * @param  parameterCount the given parameter count
      * @param  exception      the given exception
      * @param  effect         the given effect
+     * 
      * @return                the "c" method spec
      */
     private static Stream<MethodSpec> c(
@@ -325,6 +323,7 @@ final class JavaPoetUtility
      *
      * @param  parameterCount the given parameter count
      * @param  exception      the given exception
+     * 
      * @return                the "c" method spec
      */
     private static Stream<MethodSpec> c(
@@ -366,6 +365,7 @@ final class JavaPoetUtility
      *
      * @param  parameterCount the given parameter count
      * @param  effect         the given effect
+     * 
      * @return                the "e" method spec
      */
     private static MethodSpec e(
@@ -379,7 +379,7 @@ final class JavaPoetUtility
         final var javadocReturn = format("%s that throws the given exception", effect ? "an effect" : "a function");
 
         final var javadoc = concat(concat(concat(of(
-                format("Returns %s", javadocReturn),
+                format("Returns %s.", javadocReturn),
                 format("@param %s the given exception", parameterSpec.name)),
                 typeVariableNameJavadocList(0, parameterCount, r, true, effect)),
                 of(format("@return %s", javadocReturn))),
@@ -404,6 +404,7 @@ final class JavaPoetUtility
      * @param  parameterCount the given parameter count
      * @param  exception      the given exception
      * @param  effect         the given effect
+     * 
      * @return                the "fN" or "eN" method spec
      */
     private static MethodSpec fN(
@@ -442,6 +443,7 @@ final class JavaPoetUtility
      * @param  parameterCount the given parameter count
      * @param  exception      the given exception
      * @param  effect         the given effect
+     * 
      * @return                the "apply" method spec
      */
     private static MethodSpec apply(
@@ -476,6 +478,7 @@ final class JavaPoetUtility
      * @param  parameterCount the given parameter count
      * @param  exception      the given exception
      * @param  effect         the given effect
+     * 
      * @return                the "curry" method spec
      */
     private static MethodSpec curry(
@@ -505,6 +508,7 @@ final class JavaPoetUtility
      * @param  parameterCount the given parameter count
      * @param  exception      the given exception
      * @param  effect         the given effect
+     * 
      * @return                the "uncurry" method spec
      */
     private static MethodSpec uncurry(
@@ -543,6 +547,7 @@ final class JavaPoetUtility
      * @param  parameterCount the given parameter count
      * @param  exception      the given exception
      * @param  effect         the given effect
+     * 
      * @return                the "reverse" method spec
      */
     private static MethodSpec reverse(
@@ -575,6 +580,7 @@ final class JavaPoetUtility
      * </ul>
      *
      * @param  parameterCount the given parameter count
+     * 
      * @return                the parameter specification list
      */
     private static Stream<ParameterSpec> parameterSpecList(
@@ -582,7 +588,7 @@ final class JavaPoetUtility
     {
         requireZeroOrPositive(parameterCount, "parameterCount");
 
-        return IntStream.range(0, parameterCount)
+        return range(0, parameterCount)
                 .mapToObj(i -> parameterSpec(typeVariableNameP(i)));
     }
 
@@ -592,6 +598,7 @@ final class JavaPoetUtility
      * package.TypeName < T0 > -> final TypeName < T0 > typeName
      *
      * @param  typeName the given type name
+     * 
      * @return          the parameter specification
      */
     private static ParameterSpec parameterSpec(
@@ -609,7 +616,7 @@ final class JavaPoetUtility
     /**
      * Return a type variable name for the given first parameter, parameter count,
      * exception, and effect.
-     *
+     * <p>
      * // @formatter:off
      * <ul>
      * <li>(0 0 R1 false false) -> F0  < R1        > </li>
@@ -660,6 +667,7 @@ final class JavaPoetUtility
      * </ul>
      *
      * @param  parameterCount the given parameter count
+     * 
      * @return                a parameter name list, delimited by a comma, beginning with p1
      */
     private static String parameterNameListDelimitedByComma(
@@ -678,6 +686,7 @@ final class JavaPoetUtility
      * </ul>
      *
      * @param  parameterCount the given parameter count
+     * 
      * @return                a parameter name list, delimited by an arrow
      */
     private static String parameterNameListDelimitedByCommaReverse(
@@ -697,6 +706,7 @@ final class JavaPoetUtility
      * </ul>
      *
      * @param  parameterCount the given parameter count
+     * 
      * @return                a parameter name list, delimited by a comma, beginning with p2
      */
     private static String parameterNameListDelimitedByCommaShift(
@@ -715,6 +725,7 @@ final class JavaPoetUtility
      * </ul>
      *
      * @param  parameterCount the given parameter count
+     * 
      * @return                a parameter name list, delimited by an arrow
      */
     private static String parameterNameListDelimitedByArrow(
@@ -733,12 +744,13 @@ final class JavaPoetUtility
      * </ul>
      *
      * @param  parameterCount the given parameter count
+     * 
      * @return                a parameter name list, delimited by function application
      */
     private static String parameterNameListDelimitedByF(
             final int parameterCount)
     {
-        return IntStream.range(0, parameterCount).mapToObj(i -> format("f(p%s)", i + 1)).collect(joining("."));
+        return range(0, parameterCount).mapToObj(i -> format("f(p%s)", i + 1)).collect(joining("."));
     }
 
     /**
@@ -748,7 +760,7 @@ final class JavaPoetUtility
             final int parameterFirst,
             final int parameterCount)
     {
-        return IntStream.range(parameterFirst, parameterCount).mapToObj(i -> format("p%s", i + 1));
+        return range(parameterFirst, parameterCount).mapToObj(i -> format("p%s", i + 1));
     }
 
     /**
@@ -757,6 +769,7 @@ final class JavaPoetUtility
      * @param  parameterCount the given parameter count
      * @param  exception      the given exception
      * @param  effect         the given effect
+     * 
      * @return                the class name
      */
     private static ClassName className(
@@ -784,7 +797,7 @@ final class JavaPoetUtility
 
     /**
      * Return a type parameter list for the given parameter count and exception.
-     *
+     * <p>
      * // @formatter:off
      * <ul>
      * <li> (1 false) -> (P1)
@@ -811,7 +824,7 @@ final class JavaPoetUtility
 
     /**
      * Return a parameterized type name for the given parameter count, return type variable name, exception, and effect.
-     *
+     * <p>
      * // @formatter:off
      * <ul>
      * <li>(2, R1, false, false) -> F2  < P1, P2, R1    ></li>
@@ -821,10 +834,10 @@ final class JavaPoetUtility
      * </ul>
      * // @formatter:on
      *
-     * @param parameterCount the given parameter count
-     * @param typeVariableName              the given return type variable name
-     * @param exception      the given exception
-     * @param effect         the given effect
+     * @param parameterCount   the given parameter count
+     * @param typeVariableName the given return type variable name
+     * @param exception        the given exception
+     * @param effect           the given effect
      * @return the parameterized type name
      */
     private static ParameterizedTypeName parameterizedTypeName(
@@ -843,7 +856,7 @@ final class JavaPoetUtility
 
     /**
      * Return a parameterized type name for the given parameter count, return type variable name, exception, and effect; in this case, reverse the parameter types.
-     *
+     * <p>
      * // @formatter:off
      * <ul>
      * <li>(2, R1, false, false) -> F2  < P2, P1, R1    ></li>
@@ -853,10 +866,10 @@ final class JavaPoetUtility
      * </ul>
      * // @formatter:on
      *
-     * @param  parameterCount the given parameter count
-     * @param  typeVariableName              the given return type variable name
-     * @param  exception      the given exception
-     * @param  effect         the given effect
+     * @param parameterCount   the given parameter count
+     * @param typeVariableName the given return type variable name
+     * @param exception        the given exception
+     * @param effect           the given effect
      * @return the parameterized type name
      */
     private static ParameterizedTypeName parameterizedTypeNameReverse(
@@ -882,7 +895,7 @@ final class JavaPoetUtility
 
     /**
      * Return a parameterized type name for the given parameter count, return type variable name, exception, and effect.
-     *
+     * <p>
      * // @formatter:off
      * <ul>
      * <li>(2, false, false) -> F1 < P1, F1  < P2, R1    > ></li>
@@ -935,6 +948,7 @@ final class JavaPoetUtility
      * @param  typeVariableNameForReturn the given return type variable name
      * @param  exception                 the given exception
      * @param  effect                    the given effect
+     * 
      * @return                           the type variable name list
      */
     private static Stream<TypeVariableName> typeVariableNameList(
@@ -958,13 +972,14 @@ final class JavaPoetUtility
      *
      * @param  parameterFirst the given parameter index
      * @param  parameterCount the given parameter count
+     * 
      * @return                the type variable name list
      */
     private static Stream<TypeVariableName> typeVariableNameList(
             final int parameterFirst,
             final int parameterCount)
     {
-        return IntStream.range(parameterFirst, parameterCount).mapToObj(JavaPoetUtility::typeVariableNameP);
+        return range(parameterFirst, parameterCount).mapToObj(JavaPoetUtility::typeVariableNameP);
     }
 
     /**
@@ -973,6 +988,7 @@ final class JavaPoetUtility
      * 0 -> P1
      *
      * @param  parameterIndex the given parameter index
+     * 
      * @return                the type variable name
      */
     private static TypeVariableName typeVariableNameP(
@@ -989,6 +1005,7 @@ final class JavaPoetUtility
      * 1 -> R1
      *
      * @param  returnIndex the given return index
+     * 
      * @return             the type variable name
      */
     private static TypeVariableName typeVariableNameR(
@@ -1017,12 +1034,13 @@ final class JavaPoetUtility
      * (0) -> (empty stream) (1) -> @param p1 the the value of parameter 1
      *
      * @param  parameterCount the given parameter count
+     * 
      * @return                the javadoc param list
      */
     private static Stream<String> pJavadocList(
             final int parameterCount)
     {
-        return IntStream.range(0, parameterCount).mapToObj(JavaPoetUtility::pJavadoc);
+        return range(0, parameterCount).mapToObj(JavaPoetUtility::pJavadoc);
     }
 
     /**
@@ -1031,6 +1049,7 @@ final class JavaPoetUtility
      * (0) -> @param p1 the the value of parameter 1
      *
      * @param  parameterIndex the given parameter index
+     * 
      * @return                the javadoc param
      */
     private static String pJavadoc(
@@ -1043,7 +1062,7 @@ final class JavaPoetUtility
 
     /**
      * Return a javadoc param list for the given parameter count and exception.
-     *
+     * <p>
      * // @formatter:off
      * <ul>
      * <li>(1 false) -> @param < P1 > the type of parameter 1</li>
@@ -1072,7 +1091,7 @@ final class JavaPoetUtility
 
     /**
      * Return a javadoc param list for the given parameter index, parameter count, return type variable name, exception, and effect.
-     *
+     * <p>
      * // @formatter:off
      * <ul>
      * <li>(0 0 R1 false true)  -> ()</li>
@@ -1092,11 +1111,11 @@ final class JavaPoetUtility
      * </ul>
      * // @formatter:on
      *
-     * @param parameterFirst the given parameter index
-     * @param parameterCount the given parameter count
+     * @param parameterFirst            the given parameter index
+     * @param parameterCount            the given parameter count
      * @param typeVariableNameForReturn the given return type variable name
-     * @param exception the given exception
-     * @param effect the given effect
+     * @param exception                 the given exception
+     * @param effect                    the given effect
      * @return the javadoc param list
      */
     private static Stream<String> typeVariableNameJavadocList(
@@ -1116,7 +1135,7 @@ final class JavaPoetUtility
 
     /**
      * Return a javadoc param list for the given parameter index, parameter count, return type variable name, exception, and effect.
-     *
+     * <p>
      * // @formatter:off
      * <ul>
      * <li>(0 0 R1 false true)  -> ()</li>
@@ -1136,11 +1155,11 @@ final class JavaPoetUtility
      * </ul>
      * // @formatter:on
      *
-     * @param parameterFirst the given parameter index
-     * @param parameterCount the given parameter count
+     * @param parameterFirst            the given parameter index
+     * @param parameterCount            the given parameter count
      * @param typeVariableNameForReturn the given return type variable name
-     * @param exception the given exception
-     * @param effect the given effect
+     * @param exception                 the given exception
+     * @param effect                    the given effect
      * @return the javadoc param list
      */
     private static Stream<String> typeVariableNameJavadocListHelper(
@@ -1170,13 +1189,14 @@ final class JavaPoetUtility
      *
      * @param  parameterFirst the given parameter index
      * @param  parameterCount the given parameter count
+     * 
      * @return                the javadoc param list
      */
     private static Stream<String> typeVariableNameJavadocList(
             final int parameterFirst,
             final int parameterCount)
     {
-        return IntStream.range(parameterFirst, parameterCount).mapToObj(JavaPoetUtility::typeVariableNameJavadocP);
+        return range(parameterFirst, parameterCount).mapToObj(JavaPoetUtility::typeVariableNameJavadocP);
     }
 
     /**
@@ -1185,6 +1205,7 @@ final class JavaPoetUtility
      * (0) -> @param < P1 > the type of parameter 1
      *
      * @param  parameterIndex the given parameter index
+     * 
      * @return                the javadoc param
      */
     private static String typeVariableNameJavadocP(
@@ -1201,6 +1222,7 @@ final class JavaPoetUtility
      * () -> @param < R1 > the type of the output value
      *
      * @param  typeVariableNameForReturn the return type variable name
+     * 
      * @return                           the javadoc param
      */
     private static String typeVariableNameJavadocR(
@@ -1217,6 +1239,7 @@ final class JavaPoetUtility
      * () -> @param < E > the type of the exception
      *
      * @param  typeVariableNameForException the exception type variable name
+     * 
      * @return                              the javadoc param
      */
     private static String typeVariableNameJavadocE(
@@ -1245,5 +1268,80 @@ final class JavaPoetUtility
         return list.isEmpty() ?
                 supplier.get() :
                 function.apply(list.stream());
+    }
+
+    public static MethodSpec methodSpecForConstructor(
+            final List<FieldSpec> fieldSpecList)
+    {
+        requireNonNull(fieldSpecList, "fieldSpecList");
+
+        return MethodSpec
+                .constructorBuilder()
+                .addModifiers(PRIVATE)
+                .addParameters(fieldSpecList.stream().map(fieldSpec -> ParameterSpec.builder(fieldSpec.type, fieldSpec.name, FINAL).build()).collect(toList()))
+                .addCode(fieldSpecList.stream().map(fieldSpec -> CodeBlock.of("this.$N = $N;", fieldSpec.name, fieldSpec.name)).collect(CodeBlock.joining("")))
+                .build();
+    }
+
+    public static List<MethodSpec> methodSpecListForGet(
+            final List<FieldSpec> fieldSpecList,
+            final BiFunction<FieldSpec, Integer, String> javadoc)
+    {
+        requireNonNull(fieldSpecList, "fieldSpecList");
+
+        return range(0, fieldSpecList.size())
+                .mapToObj(fieldSpecIndex -> MethodSpec
+                        .methodBuilder(fieldSpecList.get(fieldSpecIndex).name)
+                        .addJavadoc(concat(
+                                of(CodeBlock.of(format("Returns %s.", javadoc.apply(fieldSpecList.get(fieldSpecIndex), fieldSpecIndex)))),
+                                of(returnJavadoc(CodeBlock.of(format("return %s", javadoc.apply(fieldSpecList.get(fieldSpecIndex), fieldSpecIndex))))))
+                                        .collect(CodeBlock.joining(lineSeparator())))
+                        .addModifiers(PUBLIC)
+                        .returns(fieldSpecList.get(fieldSpecIndex).type)
+                        .addCode(CodeBlock.of("return $N;", fieldSpecList.get(fieldSpecIndex).name))
+                        .build())
+                .collect(toList());
+    }
+
+    public static MethodSpec.Builder methodSpecForFactory(
+            final ClassName className,
+            final List<TypeVariableName> typeVariableNameList,
+            final Optional<String> name,
+            final List<FieldSpec> fieldSpecList)
+    {
+        requireNonNull(className, "parameterizedTypeName");
+        requireNonNull(typeVariableNameList, "typeVariableNameList");
+        requireNonNull(name, "name");
+        requireNonNull(fieldSpecList, "fieldSpecList");
+
+        return MethodSpec
+                .methodBuilder(name.orElse(className.simpleName()))
+                .addModifiers(PUBLIC, STATIC)
+                .addTypeVariables(typeVariableNameList)
+                .returns(ParameterizedTypeName.get(className, typeVariableNameList.toArray(TypeVariableName[]::new)))
+                .addParameters(fieldSpecList.stream().map(fieldSpec -> ParameterSpec.builder(fieldSpec.type, fieldSpec.name, FINAL).build()).collect(toList()))
+                .addCode(CodeBlock.of("return new $N<>($L);", "Default", fieldSpecList.stream().map(fieldSpec -> CodeBlock.of(fieldSpec.name)).collect(CodeBlock.joining(","))));
+    }
+
+    public static MethodSpec methodSpecForInterface(
+            final MethodSpec methodSpec)
+    {
+        requireNonNull(methodSpec, "methodSpec");
+
+        if (methodSpec.modifiers.contains(STATIC))
+            throw new RuntimeException();
+
+        final var modifierSet = new HashSet<>(methodSpec.modifiers);
+        modifierSet.remove(FINAL);
+        modifierSet.add(ABSTRACT);
+
+        return MethodSpec.methodBuilder(methodSpec.name)
+                .addJavadoc(methodSpec.javadoc)
+                .addModifiers(modifierSet)
+                .addTypeVariables(methodSpec.typeVariables)
+                .returns(methodSpec.returnType)
+                .addParameters(methodSpec.parameters)
+                .addExceptions(methodSpec.exceptions)
+                .build();
     }
 }

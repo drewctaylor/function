@@ -69,6 +69,7 @@ public interface F28<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  p26 the value of parameter 26
      * @param  p27 the value of parameter 27
      * @param  p28 the value of parameter 28
+     * 
      * @return     the output value of this function
      */
     R1 f(
@@ -134,7 +135,9 @@ public interface F28<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P27>                the type of parameter 27
      * @param  <P28>                the type of parameter 28
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      a form of the given function that is of this function type
+     * 
      * @throws NullPointerException if f28 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, R1> F28<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, R1> f28(
@@ -175,6 +178,7 @@ public interface F28<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P26> the type of parameter 26
      * @param  <P27> the type of parameter 27
      * @param  <P28> the type of parameter 28
+     * 
      * @return       a function that returns its first parameter value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28> F28<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P1> c()
@@ -214,6 +218,7 @@ public interface F28<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * Returns a form of this function with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this function with the value of parameter 1 fixed to the given value
      */
     default F27<P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, R1> a(
@@ -330,7 +335,9 @@ public interface F28<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P27>                the type of parameter 27
      * @param  <P28>                the type of parameter 28
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      an uncurried form of the given function
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, R1> F28<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, R1> uncurry(
@@ -373,7 +380,9 @@ public interface F28<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * 
      * @param  f1                   the given function
      * @param  <R2>                 the type of the output value
+     * 
      * @return                      a function that is the given function composed with this function
+     * 
      * @throws NullPointerException if f1 is null
      */
     default <R2> F28<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, R2> then(
@@ -444,6 +453,7 @@ public interface F28<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P27> the type of parameter 27
      * @param  <P28> the type of parameter 28
      * @param  <R1>  the type of the output value
+     * 
      * @return       a function that returns the given value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, R1> F28<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, R1> c(

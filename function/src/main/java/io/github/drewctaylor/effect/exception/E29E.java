@@ -73,6 +73,7 @@ public interface E29E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  p27 the value of parameter 27
      * @param  p28 the value of parameter 28
      * @param  p29 the value of parameter 29
+     * 
      * @throws E   the exception
      */
     void f(
@@ -141,7 +142,9 @@ public interface E29E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P28>                the type of parameter 28
      * @param  <P29>                the type of parameter 29
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e29e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, E extends Exception> E29E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, E> e29e(
@@ -184,6 +187,7 @@ public interface E29E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P28> the type of parameter 28
      * @param  <P29> the type of parameter 29
      * @param  <E>   the type of the exception
+     * 
      * @return       an effect that does nothing
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, E extends Exception> E29E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, E> nop()
@@ -226,6 +230,7 @@ public interface E29E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E28E<P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, E> a(
@@ -345,7 +350,9 @@ public interface E29E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P28>                the type of parameter 28
      * @param  <P29>                the type of parameter 29
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an uncurried form of the given effect
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, E extends Exception> E29E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, E> uncurry(
@@ -385,7 +392,7 @@ public interface E29E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
     }
 
     /**
-     * Returns an effect that throws the given exception
+     * Returns an effect that throws the given exception.
      * 
      * @param  e                    the given exception
      * @param  <P1>                 the type of parameter 1
@@ -418,7 +425,9 @@ public interface E29E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P28>                the type of parameter 28
      * @param  <P29>                the type of parameter 29
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an effect that throws the given exception
+     * 
      * @throws NullPointerException if e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, E extends Exception> E29E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, E> e(

@@ -24,7 +24,9 @@ public interface F0<R1> extends Supplier<R1>
      * 
      * @param  f0                   the given function
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      a form of the given function that is of this function type
+     * 
      * @throws NullPointerException if f0 is null
      */
     static <R1> F0<R1> f0(
@@ -39,7 +41,9 @@ public interface F0<R1> extends Supplier<R1>
      * 
      * @param  f1                   the given function
      * @param  <R2>                 the type of the output value
+     * 
      * @return                      a function that is the given function composed with this function
+     * 
      * @throws NullPointerException if f1 is null
      */
     default <R2> F0<R2> then(
@@ -54,6 +58,7 @@ public interface F0<R1> extends Supplier<R1>
      * 
      * @param  r1   the given value
      * @param  <R1> the type of the output value
+     * 
      * @return      a function that returns the given value as its output value
      */
     static <R1> F0<R1> c(

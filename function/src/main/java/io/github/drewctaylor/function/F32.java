@@ -77,6 +77,7 @@ public interface F32<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  p30 the value of parameter 30
      * @param  p31 the value of parameter 31
      * @param  p32 the value of parameter 32
+     * 
      * @return     the output value of this function
      */
     R1 f(
@@ -150,7 +151,9 @@ public interface F32<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P31>                the type of parameter 31
      * @param  <P32>                the type of parameter 32
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      a form of the given function that is of this function type
+     * 
      * @throws NullPointerException if f32 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1> F32<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1> f32(
@@ -195,6 +198,7 @@ public interface F32<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P30> the type of parameter 30
      * @param  <P31> the type of parameter 31
      * @param  <P32> the type of parameter 32
+     * 
      * @return       a function that returns its first parameter value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32> F32<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, P1> c()
@@ -238,6 +242,7 @@ public interface F32<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * Returns a form of this function with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this function with the value of parameter 1 fixed to the given value
      */
     default F31<P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1> a(
@@ -366,7 +371,9 @@ public interface F32<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P31>                the type of parameter 31
      * @param  <P32>                the type of parameter 32
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      an uncurried form of the given function
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1> F32<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1> uncurry(
@@ -413,7 +420,9 @@ public interface F32<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * 
      * @param  f1                   the given function
      * @param  <R2>                 the type of the output value
+     * 
      * @return                      a function that is the given function composed with this function
+     * 
      * @throws NullPointerException if f1 is null
      */
     default <R2> F32<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R2> then(
@@ -492,6 +501,7 @@ public interface F32<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P31> the type of parameter 31
      * @param  <P32> the type of parameter 32
      * @param  <R1>  the type of the output value
+     * 
      * @return       a function that returns the given value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1> F32<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19, P20, P21, P22, P23, P24, P25, P26, P27, P28, P29, P30, P31, P32, R1> c(

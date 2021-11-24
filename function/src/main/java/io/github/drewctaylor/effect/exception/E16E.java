@@ -47,6 +47,7 @@ public interface E16E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  p14 the value of parameter 14
      * @param  p15 the value of parameter 15
      * @param  p16 the value of parameter 16
+     * 
      * @throws E   the exception
      */
     void f(
@@ -89,7 +90,9 @@ public interface E16E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P15>                the type of parameter 15
      * @param  <P16>                the type of parameter 16
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e16e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, E extends Exception> E16E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, E> e16e(
@@ -119,6 +122,7 @@ public interface E16E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P15> the type of parameter 15
      * @param  <P16> the type of parameter 16
      * @param  <E>   the type of the exception
+     * 
      * @return       an effect that does nothing
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, E extends Exception> E16E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, E> nop()
@@ -148,6 +152,7 @@ public interface E16E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E15E<P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, E> a(
@@ -228,7 +233,9 @@ public interface E16E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P15>                the type of parameter 15
      * @param  <P16>                the type of parameter 16
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an uncurried form of the given effect
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, E extends Exception> E16E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, E> uncurry(
@@ -255,7 +262,7 @@ public interface E16E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
     }
 
     /**
-     * Returns an effect that throws the given exception
+     * Returns an effect that throws the given exception.
      * 
      * @param  e                    the given exception
      * @param  <P1>                 the type of parameter 1
@@ -275,7 +282,9 @@ public interface E16E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P1
      * @param  <P15>                the type of parameter 15
      * @param  <P16>                the type of parameter 16
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an effect that throws the given exception
+     * 
      * @throws NullPointerException if e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, E extends Exception> E16E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, E> e(

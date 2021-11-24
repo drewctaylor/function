@@ -45,7 +45,9 @@ public interface E6<P1, P2, P3, P4, P5, P6>
      * @param  <P4>                 the type of parameter 4
      * @param  <P5>                 the type of parameter 5
      * @param  <P6>                 the type of parameter 6
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e6 is null
      */
     static <P1, P2, P3, P4, P5, P6> E6<P1, P2, P3, P4, P5, P6> e6(
@@ -64,6 +66,7 @@ public interface E6<P1, P2, P3, P4, P5, P6>
      * @param  <P4> the type of parameter 4
      * @param  <P5> the type of parameter 5
      * @param  <P6> the type of parameter 6
+     * 
      * @return      an effect that does nothing
      */
     static <P1, P2, P3, P4, P5, P6> E6<P1, P2, P3, P4, P5, P6> nop()
@@ -83,6 +86,7 @@ public interface E6<P1, P2, P3, P4, P5, P6>
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E5<P2, P3, P4, P5, P6> a(
@@ -132,7 +136,9 @@ public interface E6<P1, P2, P3, P4, P5, P6>
      * @param  <P4>                 the type of parameter 4
      * @param  <P5>                 the type of parameter 5
      * @param  <P6>                 the type of parameter 6
+     * 
      * @return                      an uncurried form of the given effect
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6> E6<P1, P2, P3, P4, P5, P6> uncurry(

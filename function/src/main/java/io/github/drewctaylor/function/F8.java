@@ -29,6 +29,7 @@ public interface F8<P1, P2, P3, P4, P5, P6, P7, P8, R1>
      * @param  p6 the value of parameter 6
      * @param  p7 the value of parameter 7
      * @param  p8 the value of parameter 8
+     * 
      * @return    the output value of this function
      */
     R1 f(
@@ -54,7 +55,9 @@ public interface F8<P1, P2, P3, P4, P5, P6, P7, P8, R1>
      * @param  <P7>                 the type of parameter 7
      * @param  <P8>                 the type of parameter 8
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      a form of the given function that is of this function type
+     * 
      * @throws NullPointerException if f8 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, R1> F8<P1, P2, P3, P4, P5, P6, P7, P8, R1> f8(
@@ -75,6 +78,7 @@ public interface F8<P1, P2, P3, P4, P5, P6, P7, P8, R1>
      * @param  <P6> the type of parameter 6
      * @param  <P7> the type of parameter 7
      * @param  <P8> the type of parameter 8
+     * 
      * @return      a function that returns its first parameter value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8> F8<P1, P2, P3, P4, P5, P6, P7, P8, P1> c()
@@ -94,6 +98,7 @@ public interface F8<P1, P2, P3, P4, P5, P6, P7, P8, R1>
      * Returns a form of this function with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this function with the value of parameter 1 fixed to the given value
      */
     default F7<P2, P3, P4, P5, P6, P7, P8, R1> a(
@@ -150,7 +155,9 @@ public interface F8<P1, P2, P3, P4, P5, P6, P7, P8, R1>
      * @param  <P7>                 the type of parameter 7
      * @param  <P8>                 the type of parameter 8
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      an uncurried form of the given function
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, R1> F8<P1, P2, P3, P4, P5, P6, P7, P8, R1> uncurry(
@@ -173,7 +180,9 @@ public interface F8<P1, P2, P3, P4, P5, P6, P7, P8, R1>
      * 
      * @param  f1                   the given function
      * @param  <R2>                 the type of the output value
+     * 
      * @return                      a function that is the given function composed with this function
+     * 
      * @throws NullPointerException if f1 is null
      */
     default <R2> F8<P1, P2, P3, P4, P5, P6, P7, P8, R2> then(
@@ -204,6 +213,7 @@ public interface F8<P1, P2, P3, P4, P5, P6, P7, P8, R1>
      * @param  <P7> the type of parameter 7
      * @param  <P8> the type of parameter 8
      * @param  <R1> the type of the output value
+     * 
      * @return      a function that returns the given value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, R1> F8<P1, P2, P3, P4, P5, P6, P7, P8, R1> c(

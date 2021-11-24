@@ -97,7 +97,9 @@ public interface E19<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P17>                the type of parameter 17
      * @param  <P18>                the type of parameter 18
      * @param  <P19>                the type of parameter 19
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e19 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19> E19<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19> e19(
@@ -129,6 +131,7 @@ public interface E19<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P17> the type of parameter 17
      * @param  <P18> the type of parameter 18
      * @param  <P19> the type of parameter 19
+     * 
      * @return       an effect that does nothing
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19> E19<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19> nop()
@@ -161,6 +164,7 @@ public interface E19<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E18<P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19> a(
@@ -249,7 +253,9 @@ public interface E19<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P17>                the type of parameter 17
      * @param  <P18>                the type of parameter 18
      * @param  <P19>                the type of parameter 19
+     * 
      * @return                      an uncurried form of the given effect
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19> E19<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16, P17, P18, P19> uncurry(

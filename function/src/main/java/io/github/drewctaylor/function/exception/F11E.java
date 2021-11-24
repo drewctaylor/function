@@ -38,7 +38,9 @@ public interface F11E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E extend
      * @param  p9  the value of parameter 9
      * @param  p10 the value of parameter 10
      * @param  p11 the value of parameter 11
+     * 
      * @return     the output value of this function
+     * 
      * @throws E   the exception
      */
     R1 f(
@@ -72,7 +74,9 @@ public interface F11E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E extend
      * @param  <P11>                the type of parameter 11
      * @param  <R1>                 the type of the output value
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a form of the given function that is of this function type
+     * 
      * @throws NullPointerException if f11e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E extends Exception> F11E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E> f11e(
@@ -97,6 +101,7 @@ public interface F11E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E extend
      * @param  <P10> the type of parameter 10
      * @param  <P11> the type of parameter 11
      * @param  <E>   the type of the exception
+     * 
      * @return       a function that returns its first parameter value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, E extends Exception> F11E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P1, E> c()
@@ -119,6 +124,7 @@ public interface F11E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E extend
      * Returns a form of this function with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this function with the value of parameter 1 fixed to the given value
      */
     default F10E<P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E> a(
@@ -185,7 +191,9 @@ public interface F11E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E extend
      * @param  <P11>                the type of parameter 11
      * @param  <R1>                 the type of the output value
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an uncurried form of the given function
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E extends Exception> F11E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E> uncurry(
@@ -211,7 +219,9 @@ public interface F11E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E extend
      * 
      * @param  f1                   the given function
      * @param  <R2>                 the type of the output value
+     * 
      * @return                      a function that is the given function composed with this function
+     * 
      * @throws NullPointerException if f1 is null
      */
     default <R2> F11E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R2, E> then(
@@ -249,6 +259,7 @@ public interface F11E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E extend
      * @param  <P11> the type of parameter 11
      * @param  <R1>  the type of the output value
      * @param  <E>   the type of the exception
+     * 
      * @return       a function that returns the given value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E extends Exception> F11E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E> c(
@@ -269,7 +280,7 @@ public interface F11E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E extend
     }
 
     /**
-     * Returns a function that throws the given exception
+     * Returns a function that throws the given exception.
      * 
      * @param  e                    the given exception
      * @param  <P1>                 the type of parameter 1
@@ -285,7 +296,9 @@ public interface F11E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E extend
      * @param  <P11>                the type of parameter 11
      * @param  <R1>                 the type of the output value
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a function that throws the given exception
+     * 
      * @throws NullPointerException if e is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E extends Exception> F11E<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, R1, E> e(

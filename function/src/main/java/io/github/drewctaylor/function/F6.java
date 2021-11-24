@@ -25,6 +25,7 @@ public interface F6<P1, P2, P3, P4, P5, P6, R1>
      * @param  p4 the value of parameter 4
      * @param  p5 the value of parameter 5
      * @param  p6 the value of parameter 6
+     * 
      * @return    the output value of this function
      */
     R1 f(
@@ -46,7 +47,9 @@ public interface F6<P1, P2, P3, P4, P5, P6, R1>
      * @param  <P5>                 the type of parameter 5
      * @param  <P6>                 the type of parameter 6
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      a form of the given function that is of this function type
+     * 
      * @throws NullPointerException if f6 is null
      */
     static <P1, P2, P3, P4, P5, P6, R1> F6<P1, P2, P3, P4, P5, P6, R1> f6(
@@ -65,6 +68,7 @@ public interface F6<P1, P2, P3, P4, P5, P6, R1>
      * @param  <P4> the type of parameter 4
      * @param  <P5> the type of parameter 5
      * @param  <P6> the type of parameter 6
+     * 
      * @return      a function that returns its first parameter value as its output value
      */
     static <P1, P2, P3, P4, P5, P6> F6<P1, P2, P3, P4, P5, P6, P1> c()
@@ -82,6 +86,7 @@ public interface F6<P1, P2, P3, P4, P5, P6, R1>
      * Returns a form of this function with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this function with the value of parameter 1 fixed to the given value
      */
     default F5<P2, P3, P4, P5, P6, R1> a(
@@ -132,7 +137,9 @@ public interface F6<P1, P2, P3, P4, P5, P6, R1>
      * @param  <P5>                 the type of parameter 5
      * @param  <P6>                 the type of parameter 6
      * @param  <R1>                 the type of the output value
+     * 
      * @return                      an uncurried form of the given function
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, R1> F6<P1, P2, P3, P4, P5, P6, R1> uncurry(
@@ -153,7 +160,9 @@ public interface F6<P1, P2, P3, P4, P5, P6, R1>
      * 
      * @param  f1                   the given function
      * @param  <R2>                 the type of the output value
+     * 
      * @return                      a function that is the given function composed with this function
+     * 
      * @throws NullPointerException if f1 is null
      */
     default <R2> F6<P1, P2, P3, P4, P5, P6, R2> then(
@@ -180,6 +189,7 @@ public interface F6<P1, P2, P3, P4, P5, P6, R1>
      * @param  <P5> the type of parameter 5
      * @param  <P6> the type of parameter 6
      * @param  <R1> the type of the output value
+     * 
      * @return      a function that returns the given value as its output value
      */
     static <P1, P2, P3, P4, P5, P6, R1> F6<P1, P2, P3, P4, P5, P6, R1> c(

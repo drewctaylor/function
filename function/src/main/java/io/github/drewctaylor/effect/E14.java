@@ -77,7 +77,9 @@ public interface E14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P12>                the type of parameter 12
      * @param  <P13>                the type of parameter 13
      * @param  <P14>                the type of parameter 14
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e14 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14> E14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14> e14(
@@ -104,6 +106,7 @@ public interface E14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P12> the type of parameter 12
      * @param  <P13> the type of parameter 13
      * @param  <P14> the type of parameter 14
+     * 
      * @return       an effect that does nothing
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14> E14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14> nop()
@@ -131,6 +134,7 @@ public interface E14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E13<P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14> a(
@@ -204,7 +208,9 @@ public interface E14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14
      * @param  <P12>                the type of parameter 12
      * @param  <P13>                the type of parameter 13
      * @param  <P14>                the type of parameter 14
+     * 
      * @return                      an uncurried form of the given effect
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14> E14<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14> uncurry(

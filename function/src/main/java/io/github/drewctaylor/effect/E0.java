@@ -17,7 +17,9 @@ public interface E0
      * Returns a form of the given effect that is of this effect type.
      * 
      * @param  e0                   the given effect
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e0 is null
      */
     static E0 e0(

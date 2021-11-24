@@ -21,6 +21,7 @@ public interface E3E<P1, P2, P3, E extends Exception>
      * @param  p1 the value of parameter 1
      * @param  p2 the value of parameter 2
      * @param  p3 the value of parameter 3
+     * 
      * @throws E  the exception
      */
     void f(
@@ -37,7 +38,9 @@ public interface E3E<P1, P2, P3, E extends Exception>
      * @param  <P2>                 the type of parameter 2
      * @param  <P3>                 the type of parameter 3
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e3e is null
      */
     static <P1, P2, P3, E extends Exception> E3E<P1, P2, P3, E> e3e(
@@ -54,6 +57,7 @@ public interface E3E<P1, P2, P3, E extends Exception>
      * @param  <P2> the type of parameter 2
      * @param  <P3> the type of parameter 3
      * @param  <E>  the type of the exception
+     * 
      * @return      an effect that does nothing
      */
     static <P1, P2, P3, E extends Exception> E3E<P1, P2, P3, E> nop()
@@ -70,6 +74,7 @@ public interface E3E<P1, P2, P3, E extends Exception>
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E2E<P2, P3, E> a(
@@ -111,7 +116,9 @@ public interface E3E<P1, P2, P3, E extends Exception>
      * @param  <P2>                 the type of parameter 2
      * @param  <P3>                 the type of parameter 3
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an uncurried form of the given effect
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, E extends Exception> E3E<P1, P2, P3, E> uncurry(
@@ -125,14 +132,16 @@ public interface E3E<P1, P2, P3, E extends Exception>
     }
 
     /**
-     * Returns an effect that throws the given exception
+     * Returns an effect that throws the given exception.
      * 
      * @param  e                    the given exception
      * @param  <P1>                 the type of parameter 1
      * @param  <P2>                 the type of parameter 2
      * @param  <P3>                 the type of parameter 3
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an effect that throws the given exception
+     * 
      * @throws NullPointerException if e is null
      */
     static <P1, P2, P3, E extends Exception> E3E<P1, P2, P3, E> e(

@@ -23,7 +23,9 @@ public interface E0E<E extends Exception>
      * 
      * @param  e0e                  the given effect
      * @param  <E>                  the type of the exception
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e0e is null
      */
     static <E extends Exception> E0E<E> e0e(
@@ -37,6 +39,7 @@ public interface E0E<E extends Exception>
      * Returns an effect that does nothing.
      * 
      * @param  <E> the type of the exception
+     * 
      * @return     an effect that does nothing
      */
     static <E extends Exception> E0E<E> nop()
@@ -47,11 +50,13 @@ public interface E0E<E extends Exception>
     }
 
     /**
-     * Returns an effect that throws the given exception
+     * Returns an effect that throws the given exception.
      * 
      * @param  e                    the given exception
      * @param  <E>                  the type of the exception
+     * 
      * @return                      an effect that throws the given exception
+     * 
      * @throws NullPointerException if e is null
      */
     static <E extends Exception> E0E<E> e(

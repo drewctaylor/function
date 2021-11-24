@@ -37,7 +37,9 @@ public interface E4<P1, P2, P3, P4>
      * @param  <P2>                 the type of parameter 2
      * @param  <P3>                 the type of parameter 3
      * @param  <P4>                 the type of parameter 4
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e4 is null
      */
     static <P1, P2, P3, P4> E4<P1, P2, P3, P4> e4(
@@ -54,6 +56,7 @@ public interface E4<P1, P2, P3, P4>
      * @param  <P2> the type of parameter 2
      * @param  <P3> the type of parameter 3
      * @param  <P4> the type of parameter 4
+     * 
      * @return      an effect that does nothing
      */
     static <P1, P2, P3, P4> E4<P1, P2, P3, P4> nop()
@@ -71,6 +74,7 @@ public interface E4<P1, P2, P3, P4>
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E3<P2, P3, P4> a(
@@ -114,7 +118,9 @@ public interface E4<P1, P2, P3, P4>
      * @param  <P2>                 the type of parameter 2
      * @param  <P3>                 the type of parameter 3
      * @param  <P4>                 the type of parameter 4
+     * 
      * @return                      an uncurried form of the given effect
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2, P3, P4> E4<P1, P2, P3, P4> uncurry(

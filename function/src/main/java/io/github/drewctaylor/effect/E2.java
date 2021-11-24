@@ -31,7 +31,9 @@ public interface E2<P1, P2> extends BiConsumer<P1, P2>
      * @param  e2                   the given effect
      * @param  <P1>                 the type of parameter 1
      * @param  <P2>                 the type of parameter 2
+     * 
      * @return                      a form of the given effect that is of this effect type
+     * 
      * @throws NullPointerException if e2 is null
      */
     static <P1, P2> E2<P1, P2> e2(
@@ -46,6 +48,7 @@ public interface E2<P1, P2> extends BiConsumer<P1, P2>
      * 
      * @param  <P1> the type of parameter 1
      * @param  <P2> the type of parameter 2
+     * 
      * @return      an effect that does nothing
      */
     static <P1, P2> E2<P1, P2> nop()
@@ -61,6 +64,7 @@ public interface E2<P1, P2> extends BiConsumer<P1, P2>
      * Returns a form of this effect with the value of parameter 1 fixed to the given value.
      * 
      * @param  p1 the given value
+     * 
      * @return    a form of this effect with the value of parameter 1 fixed to the given value
      */
     default E1<P2> a(
@@ -98,7 +102,9 @@ public interface E2<P1, P2> extends BiConsumer<P1, P2>
      * @param  f1                   the given effect
      * @param  <P1>                 the type of parameter 1
      * @param  <P2>                 the type of parameter 2
+     * 
      * @return                      an uncurried form of the given effect
+     * 
      * @throws NullPointerException if f1 is null
      */
     static <P1, P2> E2<P1, P2> uncurry(
